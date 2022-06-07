@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/d_7dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="@dimen/d_40dp"
+            android:layout_height="@dimen/d_40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/d_7dp"
+            android:layout_marginTop="@dimen/d_7dp"
+            android:layout_marginEnd="@dimen/d_7dp"
+            android:layout_marginBottom="@dimen/d_7dp"
+            android:background="@drawable/background_gray_round"
+            android:padding="@dimen/d_7dp"
+            android:src="@drawable/ic_round_person_24" />
+
+        <LinearLayout
+            android:id="@+id/centerLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d_10dp"
+            android:layout_toStartOf="@id/lastLinear"
+            android:layout_toEndOf="@id/profileImage"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/d_3dp"
+                android:text="Customer Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/d_17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvlastmsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/d_3dp"
+                android:text="Latest Message"
+                android:singleLine="true"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/d_15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lastLinear"
+            android:layout_width="@dimen/d_50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/d_10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="13 Apr"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/d_14sp"
+                android:singleLine="true"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/ivpin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/d_5dp"
+                android:src="@drawable/ic_round_push_pin_24" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"
+            android:layout_marginLeft="@dimen/d_10sp"
+            android:layout_marginRight="@dimen/d_10sp"
+            android:layout_below="@+id/centerLinear"/>
+    </RelativeLayout>
+</layout>

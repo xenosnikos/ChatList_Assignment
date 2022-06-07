@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+        <variable
+            name="SignUpViewModel"
+            type="com.android.chatapp.viewModel.SignUpViewModel" />
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/d_20dp"
+                android:layout_marginTop="@dimen/d_20dp"
+                android:layout_marginEnd="@dimen/d_20dp"
+                android:layout_marginBottom="@dimen/d_20dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_left_arrow" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="@dimen/d_20dp"
+                android:layout_toRightOf="@id/backArrow"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="start"
+                android:text="Create a Account"
+                android:textColor="@color/blacktextcolor"
+                android:textSize="@dimen/d_20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/d_15dp"
+            android:layout_marginTop="@dimen/d_15dp"
+            android:background="@drawable/background_corner_round"
+            android:drawableStart="@drawable/ic_round_person_24"
+            android:drawablePadding="@dimen/d_10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:maxLength="10"
+            android:maxLines="10"
+            android:padding="@dimen/d_13dp"
+            android:singleLine="true"
+            android:text="@={SignUpViewModel.userName}"
+            android:textColor="@color/blacktextcolor"
+            android:textColorHint="@color/blacktextcolor"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/d_15dp"
+            android:layout_marginTop="@dimen/d_15dp"
+            android:background="@drawable/background_corner_round"
+            android:drawableStart="@drawable/ic_round_email_24"
+            android:drawablePadding="@dimen/d_10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/d_13dp"
+            android:singleLine="true"
+            android:text="@={SignUpViewModel.userEmail}"
+            android:textColor="@color/blacktextcolor"
+            android:textColorHint="@color/blacktextcolor"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/ed_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/d_15dp"
+            android:layout_marginTop="@dimen/d_15dp"
+            android:background="@drawable/background_corner_round"
+            android:drawableStart="@drawable/ic_round_lock_24"
+            android:drawablePadding="@dimen/d_10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="@dimen/d_13dp"
+            android:singleLine="true"
+            android:text="@={SignUpViewModel.userPassword}"
+            android:textColor="@color/blacktextcolor"
+            android:textColorHint="@color/blacktextcolor"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rl_continue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_50dp"
+            android:layout_marginLeft="@dimen/d_30dp"
+            android:layout_marginTop="@dimen/d_15dp"
+            android:layout_marginRight="@dimen/d_30dp"
+            android:background="@drawable/background_button_round"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="center"
+            android:onClick="@{()->SignUpViewModel.onClickButton()}"
+            android:text="Submit"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/d_20sp"
+            android:textStyle="bold"
+            bind:toastMessage="@{SignUpViewModel.toastMessage}" />
+
+    </LinearLayout>
+</layout>
